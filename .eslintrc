@@ -1,0 +1,11 @@
+{
+  "extends": "eslint:recommended",
+  "rules": {
+    "semi": ["error", "never"]
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "plugins": ["eslint-plugin-html"]
+}
