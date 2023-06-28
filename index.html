@@ -6,6 +6,8 @@
     <title>Azure Detect NSFW</title>
   </head>
   <body>
+    <input id="key" placeholder="Azure Key here" type="password" />
+    <br />
     <video id="video" controls autoplay muted></video>
     <img id="img" alt="" src="" />
     <pre id="pre" style="font-size: 270%"></pre>
@@ -14,6 +16,7 @@
       const videoElement = document.getElementById('video')
       const img = document.getElementById('img')
       const pre = document.getElementById('pre')
+      const key = document.getElementById('key')
 
       const makeblob = function (dataURL) {
         var BASE64_MARKER = ';base64,'
@@ -69,7 +72,7 @@
             method: 'POST',
             body: ss.blob,
             headers: {
-              'Ocp-Apim-Subscription-Key': 'YOUR_KEY_HERE',
+              'Ocp-Apim-Subscription-Key': key.value,
               'Content-Type': 'application/octet-stream',
             },
           },
